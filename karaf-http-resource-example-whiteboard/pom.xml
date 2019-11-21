@@ -23,18 +23,30 @@
 
     <parent>
         <groupId>org.apache.karaf.examples</groupId>
-        <artifactId>apache-karaf-examples</artifactId>
+        <artifactId>karaf-http-resource-example</artifactId>
         <version>4.2.7</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>karaf-http-resource-example</artifactId>
-    <name>Apache Karaf :: Examples :: HTTP Resource</name>
-    <packaging>pom</packaging>
+    <artifactId>karaf-http-resource-example-whiteboard</artifactId>
+    <name>Apache Karaf :: Examples :: HTTP Resource :: Whiteboard</name>
+    <packaging>bundle</packaging>
 
-    <modules>
-        <module>karaf-http-resource-example-whiteboard</module>
-        <module>karaf-http-resource-example-features</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.cmpn</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
