@@ -21,20 +21,26 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.apache.karaf.examples</groupId>
-        <artifactId>apache-karaf-examples</artifactId>
-        <version>4.2.7</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
-
-    <artifactId>karaf-http-resource-example</artifactId>
-    <name>Apache Karaf :: Examples :: HTTP Resource</name>
+    <groupId>me.guillaumecle.karaf</groupId>
+    <artifactId>karaf-kotlin-sampleapp</artifactId>
+    <name>Apache Karaf :: Kotlin :: HTTP Resource</name>
     <packaging>pom</packaging>
+    <version>0.0.1</version>
 
     <modules>
-        <module>karaf-http-resource-example-whiteboard</module>
-        <module>karaf-http-resource-example-features</module>
+        <module>core</module>
+        <module>features</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>4.2.1</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
