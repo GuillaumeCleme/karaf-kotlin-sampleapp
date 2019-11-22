@@ -23,7 +23,7 @@
 
     <groupId>me.guillaumecle.karaf</groupId>
     <artifactId>karaf-kotlin-sampleapp</artifactId>
-    <name>Apache Karaf :: Kotlin :: HTTP Resource</name>
+    <name>Apache Karaf :: Kotlin :: Sample App</name>
     <packaging>pom</packaging>
     <version>0.0.1</version>
 
@@ -31,6 +31,12 @@
         <module>core</module>
         <module>features</module>
     </modules>
+
+    <properties>
+        <kotlin.version>1.3.50</kotlin.version>
+        <kotlin.coroutines.version>1.3.2</kotlin.coroutines.version>
+    </properties>
+
 
     <build>
         <plugins>
@@ -40,7 +46,34 @@
                 <version>4.2.1</version>
                 <extensions>true</extensions>
             </plugin>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+            </plugin>
         </plugins>
     </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi.cmpn</artifactId>
+                <version>6.0.0</version>
+            </dependency>
+            <!-- Kotlin Lib -->
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-osgi-bundle</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-test-junit</artifactId>
+                <version>${kotlin.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
