@@ -33,6 +33,8 @@ class KotlinDynamicResource : HttpServlet(), Servlet {
                     h2{
                         +"Kotlin Dynamic Resource Example"
                     }
+                    script("application/javascript", "./kotlin.js"){}
+                    script("application/javascript", "./karaf-kotlin-sampleapp-frontend.js"){}
                 }
             }.flush()
         }

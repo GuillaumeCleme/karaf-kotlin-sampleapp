@@ -28,6 +28,7 @@
     <version>0.0.1</version>
 
     <modules>
+        <module>frontend</module>
         <module>core</module>
         <module>features</module>
     </modules>
@@ -84,6 +85,16 @@
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-js</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-script-runtime</artifactId>
                 <version>${kotlin.version}</version>
             </dependency>
             <dependency>
