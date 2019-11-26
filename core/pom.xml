@@ -75,11 +75,6 @@
                 <includes>
                     <include>**/*.js</include>
                     <include>**/*.kjsm</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <includes>
                     <include>**/*.html</include>
                 </includes>
             </resource>

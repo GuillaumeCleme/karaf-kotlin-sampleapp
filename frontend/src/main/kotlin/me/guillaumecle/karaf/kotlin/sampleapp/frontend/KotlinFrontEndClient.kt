@@ -1,7 +1,6 @@
 package me.guillaumecle.karaf.kotlin.sampleapp.frontend
 
-fun hello(){
-    print("Hello!")
+fun main(args:Array<String>) {
+    console.info("hello")
 }
-
 

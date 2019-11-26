@@ -60,6 +60,12 @@
                 </includes>
                 <filtering>false</filtering>
             </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/*.html</include>
+                </includes>
+            </resource>
         </resources>
         <plugins>
             <plugin>
