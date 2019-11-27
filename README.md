@@ -35,6 +35,14 @@ Then, you can install the `karaf-kotlin-sampleapp-core` feature:
 karaf@root()> feature:install karaf-kotlin-sampleapp-core
 ```
 
+### TODO Watch Bundle
+
+bundle:install mvn:me.guillaumecle.karaf/karaf-kotlin-sampleapp-core/LATEST/jar
+
+bundle:watch mvn:me.guillaumecle.karaf/karaf-kotlin-sampleapp-core/LATEST/jar
+
+bundle:watch --start
+
 ## Usage
 
 The `karaf-kotlin-sampleapp-core` registers HTTP resource pattern.

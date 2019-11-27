@@ -4,8 +4,8 @@ import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
 import org.osgi.service.component.annotations.Component
 import java.io.IOException
-import java.io.OutputStream
 import java.io.PrintWriter
+import java.util.*
 import javax.servlet.Servlet
 import javax.servlet.ServletException
 import javax.servlet.http.HttpServlet
@@ -37,6 +37,26 @@ class KotlinDynamicResource : HttpServlet(), Servlet {
                     script("application/javascript", "./karaf-kotlin-sampleapp-frontend.js"){}
                 }
             }.flush()
+        }
+    }
+}
+
+@Component(
+        name = "KotlinSystemServlet",
+        property = [
+            "alias=/example/system",
+            "servlet-name=SystemServlet"
+        ]
+)
+class KotlinSystemServlet : HttpServlet(), Servlet {
+
+    @Throws(ServletException::class, IOException::class)
+    public override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
+
+        if(request.getParameter("operation")!! == "getServerDate"){
+            response.writer.use { writer: PrintWriter ->
+                writer.print(Date().toString())
+            }
         }
     }
 }
